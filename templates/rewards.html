@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rewards Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #4CAF50;
+            text-align: center;
+        }
+
+        .rewards-section {
+            margin-bottom: 30px;
+        }
+
+        .reward-item {
+            border-bottom: 1px solid #ccc;
+            padding: 15px 0;
+        }
+
+        .reward-item:last-child {
+            border-bottom: none;
+        }
+
+        .reward-title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .reward-description {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .badge {
+            width: 40px; /* Adjust the size as needed */
+            height: auto; /* Maintain aspect ratio */
+            vertical-align: middle; /* Align badge with text */
+            margin-right: 10px; /* Space between badge and text */
+        }
+
+        .redeem-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .redeem-button:hover {
+            background-color: #45a049;
+        }
+
+        .back-button {
+            display: inline-block;
+            background-color: #555;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #333;
+        }
+
+        .points-section {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .points-section span {
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <a href="{{ url_for('index') }}" class="back-button">Back to home</a>
+        <h1>Your Rewards</h1>
+
+        <div class="points-section">
+            <p>You have <span>250 Points</span> available to redeem!</p>
+        </div>
+
+        <div class="rewards-section">
+            <div class="reward-item">
+                <img src="https://via.placeholder.com/40/FFD700/FFFFFF?text=G" alt="Gold Badge" class="badge">
+                <div class="reward-title">Gold Badge</div>
+                <div class="reward-description">Earned by accumulating 1000 points.</div>
+                <button class="redeem-button">Redeem Now</button>
+            </div>
+
+            <div class="reward-item">
+                <img src="https://via.placeholder.com/40/C0C0C0/FFFFFF?text=S" alt="Silver Badge" class="badge">
+                <div class="reward-title">Silver Badge</div>
+                <div class="reward-description">Earned by accumulating 500 points.</div>
+                <button class="redeem-button">Redeem Now</button>
+            </div>
+
+            <div class="reward-item">
+                <img src="https://via.placeholder.com/40/CD7F32/FFFFFF?text=B" alt="Bronze Badge" class="badge">
+                <div class="reward-title">Bronze Badge</div>
+                <div class="reward-description">Earned by accumulating 250 points.</div>
+                <button class="redeem-button">Redeem Now</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

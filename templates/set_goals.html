@@ -1,0 +1,171 @@
+<style>
+  body {
+    background-color: #f0e3e3;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .set-goals-page {
+    background-color: #f0e3e3;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .header {
+    display: flex;
+    align-items: left;
+    margin-bottom: 50px;
+  }
+
+  .logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .app-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-left: 10px;
+    color: #333;
+  }
+
+  .goals-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .section-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .input-label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+  }
+
+  .input-field input,
+  .input-field .date-format {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f0e3e3;
+    font-size: 16px;
+    color: #333;
+  }
+
+  .input-field {
+    margin-bottom: 20px;
+  }
+
+  .submit-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: #007bff;
+    color: #ffffff;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+
+  .active-goals-container {
+    margin-top: 40px;
+  }
+
+  .active-goals-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  .goal-item {
+    background-color: #f0e3e3;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .goal-deadline {
+    color: #007bff;
+    font-weight: 700;
+  }
+
+  
+  .button {
+        background-color: #4CAF50; /* Green background */
+        color: white; /* White text */
+        padding: 10px 20px; /* Padding */
+        text-align: center; /* Center text */
+        text-decoration: none; /* No underline */
+        display: inline-block; /* Display as inline-block */
+        font-size: 16px; /* Font size */
+        margin: 4px 2px; /* Margin */
+        border: none; /* No border */
+        border-radius: 5px; /* Rounded corners */
+        width: 100px;
+        cursor: pointer; /* Pointer cursor on hover */
+        transition: background-color 0.3s; /* Smooth background color transition */
+    }
+
+    .button:hover {
+        background-color: #45a049; /* Darker green on hover */
+    }
+
+</style>
+<header class="header">
+  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/eb1830b5454e0074642c040444e16c8b4efe38cc3a5289983eba32e185b3736b?placeholderIfAbsent=true&apiKey=aa3f52c3f2244f6ca05b5f4f61461c10" class="logo" alt="HabitQuest Logo" />
+  <h1 class="app-title">HabitQuest</h1>
+
+</header>
+      <a href="{{ url_for('index') }}" class="button">Back to home</a>
+<section class="set-goals-page">
+
+  <main class="goals-container">
+    <h2 class="section-title">Set Your Goals</h2>
+
+    <form>
+      <label for="goal-title" class="input-label">Goal Title</label>
+      <div class="input-field">
+        <input type="text" id="goal-title" placeholder="Enter your goal" />
+      </div>
+
+      <label for="goal-deadline" class="input-label">Deadline</label>
+      <div class="input-field">
+        <input type="date" id="goal-deadline" class="date-format" />
+      </div>
+
+      <button type="submit" class="submit-button">Set Goal</button>
+    </form>
+
+    <div class="active-goals-container">
+      <h3 class="active-goals-title">Active Goals</h3>
+      <ul class="active-goals-list">
+        <li class="goal-item">
+          Complete Morning Routine by <span class="goal-deadline">Sep 30, 2024</span>
+        </li>
+        <li class="goal-item">
+          Read 10 Books by <span class="goal-deadline">Dec 31, 2024</span>
+        </li>
+      </ul>
+    </div>
+  </main>
+  
+</section>

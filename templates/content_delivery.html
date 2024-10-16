@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Content Delivery - HabitQuest</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #f7e8e8;
+    }
+
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .header-title {
+      font-size: 2.5em;
+    }
+
+    nav {
+      background-color: #388E3C;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .card-title {
+      font-size: 1.5em;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .card-description {
+      font-size: 1.1em;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .card-link {
+      text-decoration: none;
+      color: #4CAF50;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .card-link:hover {
+      color: #388E3C;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    
+    .button {
+        background-color: #4CAF50; /* Green background */
+        color: white; /* White text */
+        padding: 10px 20px; /* Padding */
+        text-align: center; /* Center text */
+        text-decoration: none; /* No underline */
+        display: inline-block; /* Display as inline-block */
+        font-size: 16px; /* Font size */
+        margin: 4px 2px; /* Margin */
+        border: none; /* No border */
+        border-radius: 5px; /* Rounded corners */
+        width: 100px;
+        cursor: pointer; /* Pointer cursor on hover */
+        transition: background-color 0.3s; /* Smooth background color transition */
+    }
+
+    .button:hover {
+        background-color: #45a049; /* Darker green on hover */
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1 class="header-title">HabitQuest Learning Hub</h1>
+</header>
+
+
+<div class="container">
+    <a href="{{ url_for('index') }}" class="button">Back to home</a>
+  <h2>Explore Our Learning Resources for {{course_name}}</h2>
+  <div class="content-grid">
+    <!-- Video Tutorials Section -->
+    <div class="card" id="videos">
+      <img src="https://via.placeholder.com/400x200" alt="Video Tutorials">
+      <div class="card-content">
+        <h3 class="card-title">Video Tutorials</h3>
+        <p class="card-description">Access our extensive library of video tutorials to help you master new skills and form habits step by step.</p>
+        <a href="/video-tutorials" class="card-link">Watch Now</a>
+      </div>
+    </div>
+
+    <!-- Assessments Section -->
+    <div class="card" id="assessments">
+      <img src="https://via.placeholder.com/400x200" alt="Assessments">
+      <div class="card-content">
+        <h3 class="card-title">Assessments</h3>
+        <p class="card-description">Test your knowledge and track your progress with our assessments designed to reinforce learning.</p>
+        <a href="/assessments" class="card-link">Take an Assessment</a>
+      </div>
+    </div>
+
+    <!-- Interactive Learning Materials Section -->
+    <div class="card" id="interactive-materials">
+      <img src="https://via.placeholder.com/400x200" alt="Interactive Materials">
+      <div class="card-content">
+        <h3 class="card-title">Interactive Learning Materials</h3>
+        <p class="card-description">Engage with interactive learning materials that provide hands-on experience and real-time feedback.</p>
+        <a href="/interactive-materials" class="card-link">Start Learning</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2024 HabitQuest. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,250 @@
+<style>
+    .parental-monitoring {
+      background-color: #f0e3e3;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      font-family: Inter, sans-serif;
+      padding: 50px 41px 133px;
+    }
+    
+    .logo-container {
+      align-self: flex-start;
+      display: flex;
+      gap: 8px;
+      font-size: 18px;
+      color: #000;
+    }
+    
+    .logo {
+      aspect-ratio: 1.05;
+      object-fit: contain;
+      object-position: center;
+      width: 60px;
+    }
+    
+    .app-name {
+      margin: auto 0;
+    }
+    
+    .monitoring-content {
+      border-radius: 12px;
+      background-color: #f9f9f9;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+      align-self: center;
+      display: flex;
+      margin-top: 26px;
+      width: 100%;
+      max-width: 1264px;
+      flex-direction: column;
+      padding: 60px 40px 56px;
+    }
+    
+    .section-title {
+      width: 100%;
+      padding-bottom: 1px;
+      color: #000;
+      font: 700 24px Poppins, sans-serif;
+    }
+    
+    .progress-card {
+      border-radius: 8px;
+      background-color: #f0e3e3;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      display: flex;
+      margin-top: 30px;
+      width: 100%;
+      flex-direction: column;
+      font-size: 12px;
+      color: #555;
+      padding: 39px 20px 34px;
+    }
+    
+    .card-title {
+      width: 100%;
+      padding-bottom: 1px;
+      font-size: 16px;
+      color: #333;
+      font-weight: 700;
+    }
+    
+    .progress-item {
+      margin-top: 14px;
+      width: 100%;
+      padding-bottom: 1px;
+    }
+    
+    .activity-card {
+      border-radius: 8px;
+      background-color: #f0e3e3;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      display: flex;
+      margin-top: 30px;
+      width: 100%;
+      flex-direction: column;
+      padding: 29px 20px 26px;
+    }
+    
+    .activity-list {
+      display: flex;
+      margin-top: 16px;
+      width: 100%;
+      flex-direction: column;
+      font-size: 12px;
+      color: #555;
+    }
+    
+    .activity-item {
+      width: 100%;
+      padding-bottom: 1px;
+      margin-top: 10px;
+    }
+    
+    .activity-item:first-child {
+      margin-top: 0;
+    }
+    
+    .goals-overview {
+      display: flex;
+      margin-top: 30px;
+      width: 100%;
+      flex-direction: column;
+      color: #000;
+    }
+    
+    .goals-title {
+      width: 100%;
+      padding-bottom: 1px;
+      font-size: 17px;
+      font-weight: 700;
+    }
+    
+    .goals-list {
+      display: flex;
+      margin-top: 19px;
+      width: 100%;
+      padding-left: 40px;
+      flex-direction: column;
+      font-size: 14px;
+    }
+    
+    .goal-item {
+      margin-bottom: 10px;
+    }
+    
+    .goal-status {
+      font-weight: 700;
+    }
+    
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    
+    @media (max-width: 991px) {
+      .parental-monitoring {
+        padding: 0 20px 100px;
+      }
+    
+      .logo-container {
+        white-space: initial;
+      }
+    
+      .monitoring-content {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    
+      .section-title,
+      .progress-card,
+      .card-title,
+      .progress-item,
+      .activity-card,
+      .activity-list,
+      .activity-item,
+      .goals-overview,
+      .goals-title,
+      .goals-list {
+        max-width: 100%;
+      }
+    
+      .goals-list {
+        padding-left: 20px;
+      }
+    }
+
+    
+    .button {
+        background-color: #4CAF50; /* Green background */
+        color: white; /* White text */
+        padding: 10px 20px; /* Padding */
+        text-align: center; /* Center text */
+        text-decoration: none; /* No underline */
+        display: inline-block; /* Display as inline-block */
+        font-size: 16px; /* Font size */
+        margin: 4px 2px; /* Margin */
+        border: none; /* No border */
+        border-radius: 5px; /* Rounded corners */
+        width: 100px;
+        cursor: pointer; /* Pointer cursor on hover */
+        transition: background-color 0.3s; /* Smooth background color transition */
+    }
+
+    .button:hover {
+        background-color: #45a049; /* Darker green on hover */
+    }
+
+    </style>
+    
+    <section class="parental-monitoring">
+      <header class="logo-container">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/eb1830b5454e0074642c040444e16c8b4efe38cc3a5289983eba32e185b3736b?placeholderIfAbsent=true&apiKey=aa3f52c3f2244f6ca05b5f4f61461c10" alt="HabitQuest Logo" class="logo" />
+        <h1 class="app-name">HabitQuest</h1>
+      </header>
+      <br>
+      <a href="{{ url_for('index') }}" class="button">Back to home</a>
+      <main class="monitoring-content">
+        <h2 class="section-title">Parental Monitoring</h2>
+        
+        <section class="progress-card">
+          <h3 class="card-title">Child's Progress</h3>
+          <p class="progress-item">Completed Tasks: 70%</p>
+          <p class="progress-item">Habit Streak: 12 Days</p>
+          <p class="progress-item">Total Courses Enrolled: 3</p>
+          <p class="progress-item">Time Spent on App: 5 hours</p>
+        </section>
+        
+        <section class="activity-card">
+          <h3 class="card-title">Recent Activity</h3>
+          <ul class="activity-list">
+            <li class="activity-item">Completed "Morning Routine" task</li>
+            <li class="activity-item">Watched "Healthy Eating" video</li>
+            <li class="activity-item">Started "Exercise Routine" course</li>
+            <li class="activity-item">Set a reminder for "Mental Wellness" session</li>
+            <li class="activity-item">Completed "Fitness Goals" task</li>
+          </ul>
+        </section>
+        
+        <section class="goals-overview">
+          <h3 class="goals-title">Goals Overview</h3>
+          <ul class="goals-list">
+            <li class="goal-item">
+              Goal 1: Drink 8 glasses of water daily - <span class="goal-status">Achieved 100%</span>
+            </li>
+            <li class="goal-item">
+              Goal 2: Exercise 3 times a week - <span class="goal-status">Achieved 67%</span>
+            </li>
+            <li class="goal-item">
+              Goal 3: Read 1 book per month - <span class="goal-status">Ongoing</span>
+            </li>
+          </ul>
+        </section>
+      </main>
+    </section>

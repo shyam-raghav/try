@@ -1,0 +1,141 @@
+<style>
+    .progress-page {
+      background-color: #f0e3e3;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      padding: 67px 62px 368px;
+    }
+    
+    .logo-container {
+      align-self: flex-start;
+      display: flex;
+      gap: 8px;
+      color: #000;
+      font: 400 18px Inter, sans-serif;
+    }
+    
+    .logo {
+      aspect-ratio: 1.05;
+      object-fit: contain;
+      object-position: center;
+      width: 60px;
+    }
+    
+    .progress-card {
+      border-radius: 12px;
+      background-color: #f0e3e3;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      align-self: center;
+      display: flex;
+      margin-top: 29px;
+      width: 100%;
+      max-width: 1264px;
+      flex-direction: column;
+      padding: 50px 30px;
+    }
+    
+    .progress-title {
+      color: #000;
+      text-align: center;
+      font: 700 24px Poppins, sans-serif;
+    }
+    
+    .progress-item {
+      display: flex;
+      margin-top: 20px;
+      width: 100%;
+      flex-direction: column;
+    }
+    
+    .progress-bar {
+      border-radius: 8px;
+      background-color: #e0e0e0;
+      display: flex;
+      width: 100%;
+    }
+    
+    .progress-fill {
+      border-radius: 8px;
+      background-color: #4caf50;
+      height: 20px;
+    }
+    
+    .progress-text {
+      margin-top: 10px;
+      color: #555;
+      text-align: center;
+      font: 400 12px Inter, sans-serif;
+    }
+    
+    @media (max-width: 991px) {
+      .progress-page {
+        padding: 0 20px 100px;
+      }
+    
+      .logo-container {
+        white-space: initial;
+      }
+    
+      .progress-card {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    
+      .progress-title,
+      .progress-text {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    
+      .progress-bar {
+        max-width: 100%;
+        padding-right: 20px;
+      }
+    }
+
+    
+    .button {
+        background-color: #4CAF50; /* Green background */
+        color: white; /* White text */
+        padding: 10px 20px; /* Padding */
+        text-align: center; /* Center text */
+        text-decoration: none; /* No underline */
+        display: inline-block; /* Display as inline-block */
+        font-size: 16px; /* Font size */
+        margin: 4px 2px; /* Margin */
+        border: none; /* No border */
+        border-radius: 5px; /* Rounded corners */
+        width: 100px;
+        cursor: pointer; /* Pointer cursor on hover */
+        transition: background-color 0.3s; /* Smooth background color transition */
+    }
+
+    .button:hover {
+        background-color: #45a049; /* Darker green on hover */
+    }
+
+    </style>
+    
+    <section class="progress-page">
+      <header class="logo-container">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/eb1830b5454e0074642c040444e16c8b4efe38cc3a5289983eba32e185b3736b?placeholderIfAbsent=true&apiKey=aa3f52c3f2244f6ca05b5f4f61461c10" alt="HabitQuest Logo" class="logo">
+        <h1>HabitQuest</h1>
+      </header>
+      <br>
+      <a href="{{ url_for('index') }}" class="button">Back to home</a>
+      <main class="progress-card">
+        <h2 class="progress-title">Your Progress</h2>
+    
+        {% for course in progress_data %}
+        <p>Debug: Completion percentage is {{ course.completion_percentage }}</p>  <!-- Debug output -->
+        <article class="progress-item">
+            <div class="progress-bar">
+                <div class="progress-fill" ></div>
+            </div>
+            <p class="progress-text">{{ course.completion_percentage | round(2) }}% completed on "{{ course.habit_name }}"</p>
+        </article>
+    {% endfor %}
+        </main>
+    
+    </section>
